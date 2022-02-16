@@ -1,0 +1,31 @@
+.trial {
+    padding-top: 226px;
+    height: 720px;
+    background: url('../img/bg/bg_trial.png') no-repeat;
+    &__title {
+        margin-bottom: 0;
+        font-size: 26px;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__text {
+        margin: 36px auto 0 auto;
+        width: 736px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+        color: #6d7e8a;
+    }
+    &__subtitle {
+        margin: 24px auto 0 auto;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        color: #3652e4;
+    }
+    &__btn {
+        margin: 40px auto 0 auto;
+    }
+}
