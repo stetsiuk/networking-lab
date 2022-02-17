@@ -58,6 +58,13 @@
             letter-spacing: 0.16px;
         }
     }
+    &__copyright {
+        text-align: right;
+        margin-top: 60px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #96b1c5;
+    }
     &__layer {        
         position: absolute;
         left: 0;
