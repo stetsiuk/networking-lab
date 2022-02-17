@@ -1,0 +1,39 @@
+.mission {
+    padding: 0 45px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #fff;
+    box-shadow: 0 0 24px rgba(6, 8, 57, 0.2);
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    width: 585px;
+    height: 179px;
+    z-index: 20;
+    &__title {
+        margin-top: 40px;
+        margin-bottom: 12px;
+        color: #3c57e5;
+        font-size: 16px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.16px;
+        text-align: center;
+    }
+    hr {
+        display: block;
+        margin: 0 auto;
+        width: 20px;
+        height: 3px;
+        color: #3c57e5;
+        opacity: 1;
+    }
+    &__descr {
+        margin-top: 16px;
+        color: #060839;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        text-align: center;
+    }
+}
