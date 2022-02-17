@@ -1,0 +1,121 @@
+.price {
+    position: relative;
+    top: -170px;
+    padding-top: 250px;
+    height: 1087px;
+    background: url('../img/layers/layer_price.png') (center/cover) no-repeat;
+    &__title {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 26px;
+        font-weight: 900;
+        color: #f2f7fd;
+        text-transform: uppercase;
+    }
+    &__wrapper {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    // &__item:nth-child(1) {
+    //     &_name {
+    //         color: #3652e4;
+    //     } 
+    // }
+    // &_item:nth-child(2) {
+    //     .price__name{
+    //         color: #04b669;
+    //     }  
+    // }
+    // &_item:nth-child(3) {
+    //     .price__name{
+    //         color: #8e39f0;
+    //     }
+    // }
+    &__item {
+        position: relative;
+        width: 360px;
+        height: 561px;  
+        background-color: #f2f7fd;
+        border-top-right-radius: 60px;
+        border-bottom-left-radius: 60px;
+        &_name {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.55px;
+            &_blue {
+                color: #3652e4;
+            }
+            &_green {
+                color: #04b669;
+            }
+            &_purple {
+                color: #8e39f0;
+            }
+        }
+        &_wrapper {
+            padding-top: 15px;
+            margin-top: 100px;
+            height: 461px;
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            background-color: #fff;
+        }
+        &_value {
+            position: relative;
+            text-align: center;
+            span:nth-child(1) {
+                position: absolute;
+                top: 14px;
+                left: 112px;
+            }
+            span:nth-child(2) {
+                font-size: 46px;
+                font-weight: 600;
+                
+            }
+            &_blue {
+                span:nth-child(2) {
+                    color: #3652e4;
+                }
+            }
+            &_green {
+                span:nth-child(2) {
+                    color: #04b669;
+                }
+            }
+            &_purple {
+                span:nth-child(2) {
+                    color: #8e39f0;
+                }
+            }
+        }
+        &_benefits {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            line-height: 18px;
+            li {
+                span {
+                    text-decoration: line-through;
+                    color: #6d7e8a;
+                }
+            }
+        }
+        &_btn {
+            margin: 0 auto;
+            margin-top: 33px;
+        }
+        
+    }
+}

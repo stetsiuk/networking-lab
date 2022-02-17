@@ -24,4 +24,13 @@
     &_w260 {
         width: 260px;
     }
+    &_blue {
+        background-image: linear-gradient(to right, #3652e4 0%, #54cff0 100%);
+    }
+    &_green {
+        background-image: linear-gradient(to right, #0dbf72 0%, #4ed57b 100%);
+    }
+    &_purple {
+        background-image: linear-gradient(to right, #812eed 0%, #bb5ef9 100%);
+    }
 }
