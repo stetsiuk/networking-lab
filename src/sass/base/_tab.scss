@@ -1,0 +1,35 @@
+.tab {
+    height: 60px;
+    background-color: #e6f1ff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #060839;
+    border-top-right-radius: 40px;
+    cursor: pointer;
+    &.active {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: #fff;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            height: 5px;
+            background-color: #54cff0;
+            border-radius: 5px;
+        }
+    }
+    &_w260 {
+        width: 262px;
+    }
+    &_w360{
+        width: 360px;
+    }
+}
