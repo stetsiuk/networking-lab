@@ -1,0 +1,98 @@
+.bio {
+    height: 840px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info {
+        width: 550px;
+    }
+    &__title {
+        margin-bottom: 0;
+        font-size: 26px;
+        font-weight: 900;
+        color: #060839;
+        text-transform: uppercase;
+        letter-spacing: 0.65px;
+    }
+    &__descr {
+        margin-top: 30px;
+        color: #6d7e8a;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    &__comment {
+        padding: 19px 0 47px 45px;
+        position: relative;
+        width: 555px;
+        background: url('../img/layers/layer_bio.svg') no-repeat;
+    }
+    &__iron-man {
+        position: absolute;
+        right: 0;
+        bottom: 14px;
+        width: 284px;
+        height: 306px;
+    }
+    &__figure {
+        width: 67px;
+        height: 55px;
+    }
+    &__text {
+        margin-top: 23px;
+        width: 262px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.45px;
+        color: #ffffff;
+    }
+    &__author {
+        margin-top: 18px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 22px;
+        letter-spacing: 0.35px;
+    }
+    &__subtitle {
+        margin-top: 52px;
+        margin-bottom: 0;
+        color: #060839;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.16px;
+    }
+    &__cards {
+        margin-top: 26px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__item {
+        display: flex;
+        gap: 15px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__card-text {
+        width: 205px;
+    }
+    &__card-name {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.14px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+    &__card-descr {
+        margin-top: 10px;
+        color: #6d7e8a;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
