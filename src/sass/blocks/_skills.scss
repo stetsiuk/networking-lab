@@ -1,0 +1,101 @@
+.skills {
+    height: 665px;
+    overflow: hidden;
+    &__title {
+        width: 262px;
+        margin-bottom: 0;
+        font-size: 26px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    &__slider {
+        position: relative;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 31px;
+            height: 530px;
+            border-left: 3px dashed #d0e2f8;
+            z-index: -5;
+        }
+        &_wrapper {
+            display: flex;
+            width: 1043px;
+            height: 161px;
+            box-shadow: 0 0 24px 2px rgba(6, 8, 57, 0.11);
+            border-bottom-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+        &_next {
+            position: absolute;
+            width: 23px;
+            height: 14px;
+            top: 530px;
+            left: 21px;
+            z-index: 2;
+        }
+    }
+    &__slide {
+        display: flex;
+        gap: 30px
+    }
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 68px;
+        height: 68px;
+        background-color: #fff;
+        border: 2px solid #54cff0;
+        border-radius: 100%;
+        color: #54cff0;
+        font-size: 26px;
+        font-weight: 900;
+    }
+    &__text {
+        width: 780px;
+        &_title {
+            margin-top: 36px;
+            margin-left: 43px;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.55px;
+            line-height: 22px;
+        }
+        &_descr {
+            margin-left: 43px;
+            margin-right: 43px;
+            height: 60px;
+            margin-top: 13px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #6d7e8a;
+        }
+        &_img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 213px;
+            background-color: #e6f1ff;
+        }
+        &_sticker {
+            width: 50px;
+            background-image: linear-gradient(to top, #3652e4 0%, #54cff0 100%);
+            border-top-right-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                writing-mode: vertical-lr;
+                transform: rotate(180deg);
+                color: #ffffff;
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
