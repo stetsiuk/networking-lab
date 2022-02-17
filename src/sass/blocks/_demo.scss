@@ -1,0 +1,87 @@
+.demo {
+    height: 1200px;
+    margin-top: 95px;
+    padding-top: 65px;
+    background: url('../img/bg/bg_demo.png') (center/cover) no-repeat;
+    &__info {
+        display: flex;
+        justify-content: center;
+        gap: 95px;
+        &_img {
+            width: 489px;
+            height: 439px;
+        }
+        &_text {
+            margin-top: 105px;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 38px;
+            letter-spacing: 0.65px;
+            color: #060839;
+            span {
+                color: #3652e4;
+            }
+        }
+        &_btn {
+            margin-top: 43px;
+        }
+    }
+    &__cards {
+        margin-top: 55px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+        "platform platform integration integration app app"
+        "system system system development development development"
+        ;
+        justify-items: center;
+        #platform {
+            grid-area: platform;
+        }
+        #integration {
+            grid-area: integration;
+        }
+        #app {
+            grid-area: app;
+        }
+        #system {
+            grid-area: system;
+        }
+        #development {
+            grid-area: development;
+        }
+    }
+    &__item {
+        margin-top: 65px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 348px;
+    }
+    &__bg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 130px;
+        box-shadow: 0 0 24px rgba(6, 8, 57, 0.05);
+        background-color: #ffffff;
+        border-bottom-left-radius: 40px;
+        border-top-right-radius: 40px;
+        &:hover {
+            box-shadow: 0 0 46px rgba(54, 82, 228, 0.3);
+        }
+    }
+    &__icon {
+        width: 60px;
+        height: 60px;
+    }
+    &__descr {
+        margin-top: 38px;
+        text-align: center;
+        color: #6d7e8a;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+}
