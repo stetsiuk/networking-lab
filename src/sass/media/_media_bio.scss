@@ -1,0 +1,121 @@
+@media (max-width: 1200px) {
+    .bio {
+        height: 690px;
+        margin-top: -60px;
+        &__text {
+            padding-right: 50px;
+            font-size: 15px;
+        }
+        &__iron-man {
+            bottom: 25px;
+            width: 240px;
+            height: 256px;
+        }
+        &__cards {
+            flex-wrap: wrap;
+        }
+        &__subtitle {
+            margin-top: 25px;
+            font-size: 18px;
+            text-align: center;
+        }
+        &__item {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        &__card {
+            &-text {
+                width: 210px;
+            }
+            &-name {
+                text-align: center;
+            }
+            &-descr {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .bio {
+        margin-top: -75px;
+        &__wrapper {
+            gap: 10px;
+        }
+        &__comment {
+            width: 400px;
+            margin-top: 60px;
+        }
+        &__iron-man {
+            display: none;
+        }
+        &__item {
+            height: 100%;
+            width: calc(50% - 10px);
+            flex-direction: row;
+            align-items: start;
+        }
+        &__card{
+            &-name {
+                font-size: 13px;
+            }
+            &-text {
+                width: 100%;
+            }
+            &-descr {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .bio {
+        height: 770px;
+        &__comment {
+            display: none;
+        }
+        &__title {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .bio {
+        height: 1020px;
+        margin-top: -90px;
+        .container {
+            padding: 0 5px;
+        }
+        &__title {
+            font-size: 22px;
+        }
+        &__subtitle {
+            padding-left: 55px;
+        }
+        &__descr {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        &__item {
+            width: 100%;
+            img {
+                width: 50px;
+            }
+        }
+        &__card{
+            &-descr {
+                text-align: left;
+            }
+            &-name {
+                font-size: 12px;
+            }
+            &-text {
+                width: 245px;
+            }
+        }
+    }
+}

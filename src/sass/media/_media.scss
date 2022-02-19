@@ -1,0 +1,34 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@import './media_promo';
+@import './media_trial';
+@import './media_action';
+@import './media_skills';
+@import './media_demo';
+@import './media_price';
+@import './media_bio';
+@import './media_mission';
+@import './media_footer';
+@import './media_overlay';

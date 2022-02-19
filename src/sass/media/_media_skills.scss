@@ -1,0 +1,150 @@
+@media (max-width: 1200px) {
+    .skills {
+        margin-top: -60px;
+        height: 685px;
+        &__slider {
+            &::before {
+                left: 28px;
+                height: 580px;
+            }
+            &_next {
+                top: 580px;
+                left: 18px;
+            }
+            &_wrapper {
+                width: 865px;
+                height: 180px;
+            }
+        }
+       
+        &__text {
+            width: 610px;
+        }  
+        &__title {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .skills {
+        &__slider{
+            &_wrapper {
+                width: 637px;
+            }
+            &::before {
+                left: 32px;
+                height: 580px;
+            }
+            &_next {
+                left: 21px;
+            }
+        }
+        &__slide {
+            gap: 15px
+        }
+        &__text {
+            width: 500px;
+            &_title {
+                margin-left: 25px;
+                font-size: 18px;
+            }
+            &_descr {    
+                margin-left: 25px;
+                margin-right: 25px;
+                font-size: 13px;
+            }
+            &_img {
+                width: 115px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .skills {
+        margin-top: 0;
+        &__number {
+            width: 35px;
+            height: 35px;
+            font-size: 22px;
+        }
+        &__slider {
+            &::before {
+                left: 16px;
+            }
+            &_wrapper {
+                width: 490px;
+            }
+            &_next {
+                left: 6px;
+            }
+        }
+        &__text_img {
+            img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        &__text_sticker {
+            span {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .skills {
+        margin-top: 15px;
+        height: 745px;
+        .container {
+            padding: 0 5px;
+        }
+        &__title {
+            font-size: 17px;
+        }
+        &__slide {
+            gap: 5px;
+        }
+        &__number {
+            width: 25px;
+            height: 25px;
+            font-size: 15px;
+        }
+        &__slider {
+            margin-top: 35px;
+            gap: 15px;
+            &::before {
+                height: 675px;
+                left: 13px;
+            }
+            &_next {
+                top: 672px;
+                left: 3px;
+            }
+            &_wrapper {
+                width: 280px;
+                height: 215px;
+            }
+        }
+        &__text {
+            width: 100%;
+            padding-bottom: 10px;
+            &_title {
+                margin-top: 8px;
+                margin-left: 10px;
+                font-size: 14px;
+            }
+            &_img {
+                display: none;
+            }
+            &_descr {
+                margin-left: 24px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+}

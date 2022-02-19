@@ -1,0 +1,127 @@
+@media (max-width: 1200px) {
+    .action {
+        &__info-img {
+            top: 110px;
+            width: 390px;
+            height: 278px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .action {
+        height: 1050px;
+        top: -110px;
+        padding-top: 70px;
+        &__text {
+            width: 720px;
+        }
+        &__info-img {
+            width: 364px;
+            height: 260px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .action {
+        top: -50px;
+        width: 100%;
+        &__text {
+            width: 100%;
+        }
+        &__tabs {
+            .tab {
+                padding: 0 5px;
+                display: flex;
+                flex-direction: column;
+                font-size: 14px;
+                line-height: 18px;
+                justify-content: center;
+            }
+        }
+        &__wrapper-descr {
+            padding-left: 35px;
+        }
+        &__wrapper-text {
+            padding-left: 35px;
+        }
+        &__info-img {
+            top: 165px;
+            width: 265px;
+            height: 190px;
+        }
+        &__info-text {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .action {
+        height: 1010px;
+        .container {
+            padding: 0 5px;
+        }
+        top: -20px;
+        padding-top: 45px;
+        &__title {
+            font-size: 23px;
+        }
+        &__text {
+            font-size: 13px;
+        }
+        &__switcher {
+            margin-top: 20px;
+        }
+        &__toggle {
+            font-size: 18px;
+        }
+        &__descr {
+            margin-top: 15px;
+            font-size: 17px;
+        }
+        &__tabs {
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 3px;
+            justify-content: space-between;
+            .tab {
+                padding: 0 1px;
+                width: 75px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+        &__wrapper-descr {
+            height: 100%;
+            min-height: 240px;
+            padding: 20px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &__info-descr {
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            ul {
+                margin-left: 20px;
+                text-align: left;
+            }
+        }
+        &__info-img {
+            display: none;
+        }
+        &__wrapper-text {
+            height: 100%;
+            padding: 15px 5px 15px 5px;
+            border-bottom-left-radius: 0px;
+        }
+        &__info-text {
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+}
