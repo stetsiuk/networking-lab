@@ -7,6 +7,11 @@ const rename       = require("gulp-rename");
 const imagemin     = require('gulp-imagemin');
 const htmlmin      = require('gulp-htmlmin');
 
+const webpack       = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+
+
 gulp.task('server', function() {
     browserSync({
         server: {
@@ -21,6 +26,13 @@ gulp.task('html', function () {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist/"));
 });
+
+gulp.task('js', function() {
+    return gulp.src('src/js/index.js')
+      .pipe(webpackStream(webpackConfig), webpack)
+      .pipe(gulp.dest('dist/'))
+      .pipe(browserSync.stream());
+  });
 
 gulp.task('styles', function() {
     return gulp.src("src/sass/**/*.+(scss|sass)")
@@ -55,8 +67,9 @@ gulp.task('watch', function() {
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
+    gulp.watch("src/js/**/*").on('all', gulp.parallel('js'));
     gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
     gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
 });
 
-gulp.task('default', gulp.parallel('server', 'html', 'styles', 'images', 'icons', 'fonts', 'watch'));
+gulp.task('default', gulp.parallel('server', 'html', 'js', 'styles', 'images', 'icons', 'fonts', 'watch'));
