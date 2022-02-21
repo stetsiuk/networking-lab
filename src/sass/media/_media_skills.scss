@@ -98,7 +98,7 @@
 @media (max-width: 576px) {
     .skills {
         margin-top: 15px;
-        height: 745px;
+        height: 715px;
         .container {
             padding: 0 5px;
         }
@@ -118,16 +118,19 @@
             gap: 15px;
             &::before {
                 height: 675px;
-                left: 13px;
+                left: 12px;
             }
             &_next {
-                top: 672px;
-                left: 3px;
+                top: 645px;
+                left: 2px;
             }
             &_wrapper {
-                width: 280px;
-                height: 215px;
+                min-width: 280px;
+                height: 205px;
             }
+        }
+        &__slide {
+            justify-content: space-between;
         }
         &__text {
             width: 100%;
@@ -146,5 +149,4 @@
             }
         }
     }
-
 }

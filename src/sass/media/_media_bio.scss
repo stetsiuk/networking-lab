@@ -85,22 +85,26 @@
 
 @media (max-width: 576px) {
     .bio {
-        height: 1020px;
+        height: 770px;
         margin-top: -90px;
         .container {
-            padding: 0 5px;
+            padding: 0 20px;
         }
         &__title {
             font-size: 22px;
         }
         &__subtitle {
-            padding-left: 55px;
+            text-align: center;
         }
         &__descr {
             margin-top: 20px;
             font-size: 15px;
         }
+        &__cards {
+            justify-content: center;
+        }
         &__item {
+            justify-content: center;
             width: 100%;
             img {
                 width: 50px;
@@ -108,14 +112,33 @@
         }
         &__card{
             &-descr {
+                height: 100%;
                 text-align: left;
             }
             &-name {
                 font-size: 12px;
             }
             &-text {
-                width: 245px;
+                min-width: 245px;
             }
         }
+    }
+}
+
+@media (max-width: 467px) {
+    .bio {
+        height: 850px;
+    }
+}
+
+@media (max-width: 408px) {
+    .bio {
+        height: 900px;
+    }
+}
+
+@media (max-width: 385px) {
+    .bio {
+        height: 1040px;
     }
 }

@@ -30,12 +30,12 @@
 
 @media (max-width: 576px) {
     .mission {
-        margin-top: 25px;
+        margin-top: 40px;
         height: 175px;
         padding: 10px 10px;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 30px;
-        width: calc(100% - 10px);
+        width: calc(100% - 40px);
         &__title {
             font-size: 15px;
         }
