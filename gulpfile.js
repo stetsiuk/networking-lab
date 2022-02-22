@@ -5,7 +5,12 @@ const cleanCSS     = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 const rename       = require("gulp-rename");
 const imagemin     = require('gulp-imagemin');
+const webp         = require('gulp-webp');
 const htmlmin      = require('gulp-htmlmin');
+const del          = require('del');
+const webpHtmlNosvg = require('gulp-webp-html-nosvg');
+const fonter        = require('gulp-fonter');
+const ttf2woff2     = require('gulp-ttf2woff2');
 
 const webpack       = require('webpack');
 const webpackStream = require('webpack-stream');
@@ -23,6 +28,7 @@ gulp.task('server', function() {
 
 gulp.task('html', function () {
     return gulp.src("src/*.html")
+        .pipe(webpHtmlNosvg())
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("dist/"));
 });
@@ -30,7 +36,7 @@ gulp.task('html', function () {
 gulp.task('js', function() {
     return gulp.src('src/js/index.js')
       .pipe(webpackStream(webpackConfig), webpack)
-      .pipe(gulp.dest('dist/'))
+      .pipe(gulp.dest('dist/js/'))
       .pipe(browserSync.stream());
   });
 
@@ -45,31 +51,81 @@ gulp.task('styles', function() {
 });
 
 gulp.task('images', function () {
-    return gulp.src("src/img/**/*")
-        .pipe(imagemin())
+    return gulp.src("src/img/**/*.{jpg,jpeg,png,gif,webp}")
+        .pipe(webp())
         .pipe(gulp.dest("dist/img"))
+
+        .pipe(gulp.src("src/img/**/*.{jpg,jpeg,png,gif,webp}"))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            interlaced: true,
+            optimizationLevel: 3
+        }))
+        .pipe(gulp.dest("dist/img"))
+
+        .pipe(gulp.src("src/img/**/*.svg"))
+        .pipe(gulp.dest("dist/img"))
+
         .pipe(browserSync.stream());
 });
 
 gulp.task('icons', function () {
-    return gulp.src("src/icons/**/*")
+    return gulp.src("src/icons/**/*.{jpg,jpeg,png,gif,webp}")
+        .pipe(webp())
         .pipe(gulp.dest("dist/icons"))
+
+        .pipe(gulp.src("src/icons/**/*.{jpg,jpeg,png,gif,webp}"))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            interlaced: true,
+            optimizationLevel: 3
+        }))
+        .pipe(gulp.dest("dist/icons"))
+
+        .pipe(gulp.src("src/icons/**/*.svg"))
+        .pipe(gulp.dest("dist/icons"))
+
         .pipe(browserSync.stream());
 });
 
-gulp.task('fonts', function () {
-    return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"))
-        .pipe(browserSync.stream());
-});
+gulp.task('js-libs', function() {
+    return gulp.src("./src/js/libs/*")
+    .pipe(gulp.dest("./dist/js/libs"))
+})
+
+gulp.task('reset', function() {
+    return del('./dist');
+})
+
+gulp.task('otfToTtf', function() {
+	return gulp.src(`./src/fonts/*.otf`, {})
+		.pipe(fonter({
+			formats: ['ttf']
+		}))
+		.pipe(gulp.dest(`./src/fonts/`))
+})
+
+gulp.task('ttfToWoff', function() {
+	return gulp.src(`./src/fonts/*.ttf`, {})
+		.pipe(fonter({
+			formats: ['woff']
+		}))
+		.pipe(gulp.dest(`./dist/fonts/`))
+		.pipe(gulp.src(`./src/fonts/*.ttf`))
+		.pipe(ttf2woff2())
+		.pipe(gulp.dest(`dist/fonts/`))
+})
 
 gulp.task('watch', function() {
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
-    gulp.watch("src/js/**/*").on('all', gulp.parallel('js'));
-    gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
-    gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
+    gulp.watch("src/js/*.js").on('all', gulp.parallel('js'));
+    gulp.watch("src/icons/**/*}").on('all', gulp.parallel('icons'));
 });
 
-gulp.task('default', gulp.parallel('server', 'html', 'js', 'styles', 'images', 'icons', 'fonts', 'watch'));
+const fonts = gulp.series('otfToTtf', 'ttfToWoff');
+
+gulp.task('default', gulp.series('reset', gulp.parallel(fonts, 'html', 'js', 'js-libs', 'styles', 'images', 'icons', 'watch', 'server')));

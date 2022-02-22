@@ -19,6 +19,10 @@
         text-decoration: none;
         cursor: pointer;
     }
+    &__icon {
+        height: 40px;
+        width: 28px;
+    }
     &__name {
         margin-left: 10px;
         font-size: 26px;
@@ -38,6 +42,8 @@
             font-size: 14px;
             font-weight: 400;
             img {
+                width: 20px;
+                height: 20px;
                 margin-right: 10px;
             }
         }

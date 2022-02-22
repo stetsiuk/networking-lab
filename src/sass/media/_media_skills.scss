@@ -2,10 +2,13 @@
     .skills {
         margin-top: -60px;
         height: 685px;
+        &__wrapper {
+            height: 610px;
+        }
         &__slider {
             &::before {
                 left: 28px;
-                height: 580px;
+                height: calc(100% - 161px);
             }
             &_next {
                 top: 580px;
@@ -35,7 +38,7 @@
             }
             &::before {
                 left: 32px;
-                height: 580px;
+                height: calc(100% - 161px);
             }
             &_next {
                 left: 21px;
@@ -98,7 +101,7 @@
 @media (max-width: 576px) {
     .skills {
         margin-top: 15px;
-        height: 715px;
+        height: 760px;
         .container {
             padding: 0 5px;
         }
@@ -113,11 +116,14 @@
             height: 25px;
             font-size: 15px;
         }
+        &__wrapper {
+            height: 720px;
+        }
         &__slider {
             margin-top: 35px;
             gap: 15px;
             &::before {
-                height: 675px;
+                height: calc(100% - 180px);
                 left: 12px;
             }
             &_next {

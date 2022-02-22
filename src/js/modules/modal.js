@@ -16,13 +16,10 @@ function modal() {
     activeModal(promoBtn);
     activeModal(trialBtn);
 
-    const closeModal = (selector) => {
-        selector.addEventListener('click', () => {
+    close.addEventListener('click', () => {
             overlay.style.display = 'none';
             contactModal.style.display = 'none';
-        })
-    }
-    closeModal(close);
+    })
 }
 
 

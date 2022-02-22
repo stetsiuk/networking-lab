@@ -22,6 +22,7 @@
         height: 260px;
     }
     &__form {
+        position: relative;
         margin-left: 170px;
         width: 752px;
         display: flex;
@@ -57,6 +58,33 @@
             font-weight: 400;
             letter-spacing: 0.16px;
         }
+        .error {
+            border: 2px solid red;
+        }
+        label.error {
+            border: none;
+        }
+        label#name-error {
+            position: absolute;
+            top: 45px;
+            left: 180px;
+            transform: translateX(-50%);
+            font-size: 12px;
+        }
+        label#email-error {
+            position: absolute;
+            top: 45px;
+            right: 180px;
+            transform: translateX(50%);
+            font-size: 12px;
+        }
+        label#text-error {
+            position: absolute;
+            top: 255px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+        }
     }
     &__copyright {
         text-align: right;
@@ -86,6 +114,10 @@
         text-decoration: none;
         cursor: pointer;
     }
+    &__icon {
+        height: 40px;
+        width: 28px;
+    }
     &__name {
         margin-left: 10px;
         font-size: 26px;
@@ -105,6 +137,8 @@
             font-size: 14px;
             font-weight: 400;
             img {
+                width: 20px;
+                height: 20px;
                 margin-right: 10px;
             }
         }
